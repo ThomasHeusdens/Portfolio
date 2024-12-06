@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import Navigation from '../components/Navigation';
 import "./globals.css";
 
 const geistSans = localFont({
@@ -11,6 +10,11 @@ const geistSans = localFont({
 const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
+  weight: "100 900",
+});
+const yellowTail = localFont({
+  src: "./fonts/Yellowtail-Regular.ttf",
+  variable: "--font-yellowtail",
   weight: "100 900",
 });
 
@@ -27,9 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${yellowTail.variable} antialiased`}
       >
-        <Navigation />
         {children}
       </body>
     </html>
