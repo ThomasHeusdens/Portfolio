@@ -18,28 +18,33 @@ export default function Home() {
 
           <header className="absolute top-8 left-0 right-0 px-8 z-30">
             <div className="flex justify-between items-center">
-              <div>
+              <Link href={"/"}>
                 <h3 className="text-2xl font-bold">Thomas Heusdens</h3>
                 <p className="text-sm opacity-80">Web Developer</p>
-              </div>
+              </Link>
               <div>
                 <a
-                  href="#"
-                  className="px-4 py-2 border border-white rounded-full hover:bg-white hover:text-blue-500 transition-colors"
+                  href="https://www.linkedin.com/in/thomas-heusdens-0bba19258/"
+                  target="_blank"
+                  className="px-4 py-2 border border-white rounded-full hover:bg-white hover:text-black transition-colors"
                 >
-                  CONTACT
+                  CONNECT
                 </a>
               </div>
             </div>
           </header>
 
-          <div className="relative z-20 flex flex-col justify-center items-start h-full px-8">
+          <div className="relative z-20 flex flex-col items-start h-full mt-56 px-8">
             <main>
               <h1 className="text-8xl font-extrabold mb-4 text-left">
                 Scroll to look into my school projects
               </h1>
-              <Link href={"/work"} className="text-xl opacity-75 text-left">
-                Explore my work
+              <Link href={"/work"} className="text-xl text-left">
+                <button
+                    className="px-6 py-3 bg-blue-600 text-white font-bold rounded-full mt-20"
+                  >
+                    Explore my projects
+                </button>
               </Link>
             </main>
           </div>
