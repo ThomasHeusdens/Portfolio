@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,7 +8,33 @@ import { Project } from "@/types";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../../app/globals.css";
 
-export default function ProjectDetails({ project }: { project: Project }) {
+export default function ProjectPage() {
+  const [project, setProject] = useState<Project | null>(null);
+
+  useEffect(() => {
+    fetch("/projects.json")
+      .then((response) => response.json())
+      .then((projects: Project[]) => {
+        const projectData = projects.find((proj) => proj.id === "2");
+        if (projectData) {
+          setProject(projectData);
+        } else {
+          console.error("Project not found.");
+        }
+      })
+      .catch((error: unknown) => {
+        if (error instanceof Error) {
+          console.error("Error loading project:", error.message);
+        } else {
+          console.error("Unknown error occurred");
+        }
+      });
+  }, []);
+
+  if (!project) {
+    return <div className="text-center text-white">Loading...</div>;
+  }
+
   return (
     <div>
       <header className="absolute top-8 left-0 right-0 px-8 z-30">
@@ -40,44 +67,47 @@ export default function ProjectDetails({ project }: { project: Project }) {
             />
           </div>
         </Link>
-        <h1 className="text-6xl font-bold text-center mb-12 text-white">{project.name}</h1>
+        <h1 className="text-6xl font-bold text-center mb-12 text-white">
+          {project.name}
+        </h1>
 
         <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
           {/* Carousel Section */}
           <div className="w-full lg:w-1/2">
-          <Carousel
-            showThumbs={false}
-            infiniteLoop={true}
-            autoPlay={true}
-            interval={3000}
-            showArrows={true}
-            showIndicators={true}
-            showStatus={false}
-            className="rounded-xl overflow-hidden"
+            <Carousel
+              showThumbs={false}
+              infiniteLoop={true}
+              autoPlay={true}
+              interval={3000}
+              showArrows={true}
+              showIndicators={true}
+              showStatus={false}
+              className="rounded-xl overflow-hidden"
             >
-                {project.projectImages?.map((image: string, idx: number) => (
-                    <div
-                    key={idx}
-                    className="relative w-[800px] h-[362.7px] bg-black flex items-center justify-center overflow-hidden"
-                    >
-                    <div className="absolute w-full h-full">
-                        <Image
-                        src={image}
-                        alt={`Project Image ${idx + 1}`}
-                        fill
-                        className="object-cover object-center"
-                        />
-                    </div>
-                    </div>
-                ))}
+              {project.projectImages?.map((image: string, idx: number) => (
+                <div
+                  key={idx}
+                  className="relative w-[800px] h-[362.7px] bg-black flex items-center justify-center overflow-hidden"
+                >
+                  <div className="absolute w-full h-full">
+                    <Image
+                      src={image}
+                      alt={`Project Image ${idx + 1}`}
+                      fill
+                      className="object-cover object-center"
+                    />
+                  </div>
+                </div>
+              ))}
             </Carousel>
-
           </div>
 
           {/* Project Details Section */}
           <div className="w-full lg:w-1/2 space-y-6">
             <div>
-              <h2 className="text-3xl font-bold text-white">Description of the project</h2>
+              <h2 className="text-3xl font-bold text-white">
+                Description of the project
+              </h2>
             </div>
 
             <div>
@@ -85,7 +115,9 @@ export default function ProjectDetails({ project }: { project: Project }) {
             </div>
 
             <div>
-              <h2 className="text-2xl text-bold text-white">Technologies used:</h2>
+              <h2 className="text-2xl text-bold text-white">
+                Technologies used:
+              </h2>
               <p className="text-gray-300">{project.technologies}</p>
             </div>
 
