@@ -1,0 +1,12 @@
+[
+  {
+    "title": "A 3D astronomy test",
+    "backgroundImage": "/3dastronomy.jpg",
+    "link": "#",
+    "previewImages": [
+      "/django-angular.jpg",
+      "/django-angular.jpg",
+      "/django-angular.jpg"
+    ]
+  }
+]

@@ -1,97 +1,49 @@
-import Name from "../components/name";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <main className="flex flex-col w-4/5 h-screen">
-        <div className="group flex items-center justify-center w-full flex-[3] border-2 border-zinc-500 mt-2 relative">
-          <h3 className="text-center text-xl text-white group-hover:opacity-0 transition-opacity duration-300">
-            What I offer
-          </h3>
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <Link href="/webdevelopment" className="flex-1 flex flex-col items-center justify-center p-4 text-white border-2 border-zinc-500 h-5/6 ml-5 relative">
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src="/web.png"
-                  alt="Background pattern"
-                  layout="fill"
-                  objectFit="cover"
-                  className="opacity-10 transition-opacity duration-300 hover:opacity-25"
-                />
-              </div>
-              <div className="relative w-4/5 h-4/5 flex items-center justify-center z-10">
-                <Image
-                  src="/programmer.png"
-                  alt="Full stack development"
-                  layout="intrinsic"
-                  width={150}
-                  height={150}
-                  className="object-contain grayscale transform transition-transform duration-300 hover:scale-125 hover:grayscale-0"
-                />
-              </div>
-            </Link>
+      <div>
+        <div className="relative h-screen text-white bg-black overflow-hidden">
+           <div className="absolute right-0 top-0 h-full w-1/2">
+              <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
+              <Image
+                src="/me.JPG"
+                alt="Thomas Heusdens"
+                layout="fill"
+                style={{ objectFit: "cover" }}
+                className="w-full h-full grayscale opacity-70"
+              />
+            </div>
 
-            <Link href="/mobileapp" className="flex-1 flex flex-col items-center justify-center p-4 text-white border-2 border-zinc-500 h-5/6 ml-5 relative">
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src="/app.png"
-                  alt="Background pattern"
-                  layout="fill"
-                  objectFit="cover"
-                  className="opacity-10 transition-opacity duration-300 hover:opacity-25"
-                />
+          <header className="absolute top-8 left-0 right-0 px-8 z-30">
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="text-2xl font-bold">Thomas Heusdens</h3>
+                <p className="text-sm opacity-80">Web Developer</p>
               </div>
-              <div className="relative w-4/5 h-4/5 flex items-center justify-center z-10">
-                <Image
-                  src="/mobile.png"
-                  alt="Mobile app"
-                  layout="intrinsic"
-                  width={150}
-                  height={150}
-                  className="object-contain grayscale transform transition-transform duration-300 hover:scale-125 hover:grayscale-0"
-                />
+              <div>
+                <a
+                  href="#"
+                  className="px-4 py-2 border border-white rounded-full hover:bg-white hover:text-blue-500 transition-colors"
+                >
+                  CONTACT
+                </a>
               </div>
-            </Link>
+            </div>
+          </header>
 
-            <Link href="/uxuidesign" className="flex-1 flex flex-col items-center justify-center p-4 text-white border-2 border-zinc-500 h-5/6 m-5 relative">
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src="/uxui.png"
-                  alt="Background pattern"
-                  layout="fill"
-                  objectFit="cover"
-                  className="opacity-10 transition-opacity duration-300 hover:opacity-25"
-                />
-              </div>
-              <div className="relative w-4/5 h-4/5 flex items-center justify-center z-10">
-                <Image
-                  src="/design.png"
-                  alt="UX/UI Design"
-                  layout="intrinsic"
-                  width={150}
-                  height={150}
-                  className="object-contain grayscale transform transition-transform duration-300 hover:scale-125 hover:grayscale-0"
-                />
-              </div>
-            </Link>
+          <div className="relative z-20 flex flex-col justify-center items-start h-full px-8">
+            <main>
+              <h1 className="text-8xl font-extrabold mb-4 text-left">
+                Scroll to look into my school projects
+              </h1>
+              <Link href={"/work"} className="text-xl opacity-75 text-left">
+                Explore my work
+              </Link>
+            </main>
           </div>
         </div>
-
-        <div className="flex items-center justify-center w-full flex-[1]">
-          <Name />
-        </div>
-
-        <div className="flex w-full flex-[3] space-x-2">
-          <div className="flex-1 flex items-center justify-center border-2 border-zinc-500 mb-2">
-            <h3 className="text-center text-xl text-white">About me</h3>
-          </div>
-          <div className="flex-1 flex items-center justify-center border-2 border-zinc-500 mb-2">
-            <h3 className="text-center text-xl text-white">Contact me</h3>
-          </div>
-        </div>
-      </main>
-    </div>
+      </div>
   );
 }
