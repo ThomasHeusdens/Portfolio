@@ -3,10 +3,11 @@
 import { Carousel } from "react-responsive-carousel";
 import Link from "next/link";
 import Image from "next/image";
+import { Project } from "../../../types"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../../app/globals.css";
 
-export default function ProjectDetails({ project }: { project: any }) {
+export default function ProjectDetails({ project }: { project: Project }) {
   return (
     <div>
       <header className="absolute top-8 left-0 right-0 px-8 z-30">

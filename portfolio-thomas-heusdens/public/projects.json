@@ -60,6 +60,27 @@
         "/mobile6.jpg"
       ],
       "category": "Mobile"
-    }
+    },
+    {
+        "id": "4",
+        "title": "A scraping website that retrieves data from Torf",
+        "name": "Scrape on Torf",
+        "description": "This project is a web scraping tool that extracts product data (such as titles, prices, and images) from the Torfs website, focusing on specific categories like shoes and bags. The backend efficiently collects data from multiple pages and displays the results in a simple front-end interface.",
+        "technologies": "NodeJS and Puppeteer",
+        "githubLink": "https://github.com/ThomasHeusdens/prototype-scraping",
+        "projectImages": [
+          "/scraper4.png",
+          "/scraper5.png",
+          "/scraper6.png",
+          "/scraper7.png"
+        ],
+        "backgroundImage": "/scraping.jpeg",
+        "previewImages": [
+          "/scraper1.png",
+          "/scraper2.png",
+          "/scraper3.png"
+        ],
+        "category": "Web"
+      }
   ]
   

@@ -34,10 +34,10 @@ export default function Home() {
             </div>
           </header>
 
-          <div className="relative z-20 flex flex-col items-start h-full mt-56 px-8">
+          <div className="relative z-20 flex flex-col items-start h-full mt-40 px-8">
             <main>
               <h1 className="text-8xl font-extrabold mb-4 text-left">
-                Scroll to look into my school projects
+                A passionate web developer ready to work with you
               </h1>
               <Link href={"/work"} className="text-xl text-left">
                 <button
