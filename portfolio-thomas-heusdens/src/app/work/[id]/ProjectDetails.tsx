@@ -3,7 +3,7 @@
 import { Carousel } from "react-responsive-carousel";
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "../../../types"
+import { Project } from "@/types";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../../app/globals.css";
 

@@ -3,16 +3,24 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Project } from "@/types";
 
 export default function Work() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    fetch('/projects.json')
+    fetch("/projects.json")
       .then((response) => response.json())
-      .then((data) => setProjects(data))
-      .catch((error) => console.error('Error loading projects:', error));
+      .then((data: Project[]) => setProjects(data))
+      .catch((error: unknown) => {
+        if (error instanceof Error) {
+          console.error("Error loading projects:", error.message);
+        } else {
+          console.error("Unknown error occurred");
+        }
+      });
   }, []);
+  
 
   return (
     <div>
