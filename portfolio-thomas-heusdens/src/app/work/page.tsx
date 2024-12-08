@@ -49,15 +49,15 @@ export default function Work() {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="relative w-full sm:w-[calc(33.333%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(33.333%-1rem)] 
-                         h-auto rounded-xl overflow-hidden shadow-lg group bg-black transition-all duration-300 p-6"
+              className="relative w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] 
+                    h-auto rounded-xl overflow-hidden shadow-lg group bg-black transition-all duration-300 p-6"
             >
               <Image
                 src={project.backgroundImage}
                 alt={project.title}
                 layout="fill"
                 objectFit="cover"
-                className="absolute inset-0 w-full h-full grayscale group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-300"
+                className="absolute inset-0 w-full h-full group-hover:opacity-70 transition-all duration-300"
               />
 
               <div className="relative z-10 flex flex-col justify-center items-center text-center">
@@ -65,7 +65,7 @@ export default function Work() {
 
                 <Link href={`/work/${project.id}`}>
                   <button
-                    className="px-6 py-3 bg-blue-600 text-white font-bold rounded-full grayscale group-hover:grayscale-0 transition-all duration-300 mb-6"
+                    className="px-6 py-3 bg-blue-600 text-white font-bold rounded-full transition-all duration-300 mb-6"
                   >
                     See Project
                   </button>
@@ -86,7 +86,7 @@ export default function Work() {
                         width={150}
                         height={200}
                         objectFit="cover"
-                        className="w-[100px] h-[150px] object-cover grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        className="w-[100px] h-[150px] object-cover hover:opacity-100 transition-all duration-300"
                       />
                     </div>
                   ))}

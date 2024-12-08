@@ -67,7 +67,7 @@ export default function ProjectPage() {
             />
           </div>
         </Link>
-        <h1 className="text-6xl font-bold text-center mb-12 text-white">
+        <h1 className="text-2xl md:text-6xl font-bold text-center mb-12 text-white">
           {project.name}
         </h1>
 

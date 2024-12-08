@@ -8,11 +8,11 @@ export default function Home() {
            <div className="absolute right-0 top-0 h-full w-1/2">
               <div className="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none"></div>
               <Image
-                src="/me.JPG"
+                src="/me.png"
                 alt="Thomas Heusdens"
                 layout="fill"
                 style={{ objectFit: "cover" }}
-                className="w-full h-full grayscale opacity-70"
+                className="w-full h-full opacity-70"
               />
             </div>
 
@@ -36,7 +36,7 @@ export default function Home() {
 
           <div className="relative z-20 flex flex-col items-start h-full mt-40 px-8">
             <main>
-              <h1 className="text-8xl font-extrabold mb-4 text-left">
+              <h1 className="text-4xl font-extrabold mb-4 text-left lg:text-8xl">
                 A passionate web developer ready to work with you
               </h1>
               <Link href={"/work"} className="text-xl text-left">
