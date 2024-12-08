@@ -34,7 +34,7 @@ export default function Home() {
             </div>
           </header>
 
-          <div className="relative z-20 flex flex-col items-start h-full mt-40 px-8">
+          <div className="relative z-20 flex flex-col justify-center items-start h-full px-8">
             <main>
               <h1 className="text-4xl font-extrabold mb-4 text-left lg:text-8xl">
                 A passionate web developer ready to work with you

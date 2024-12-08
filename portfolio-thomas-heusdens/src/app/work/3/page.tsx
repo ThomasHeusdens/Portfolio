@@ -55,7 +55,7 @@ export default function ProjectPage() {
         </div>
       </header>
 
-      <div className="flex flex-col mt-28 px-8 relative">
+      <div className="flex flex-col mt-40 px-8 relative">
         <Link href="/work">
           <div className="absolute left-8 mt-54">
             <Image

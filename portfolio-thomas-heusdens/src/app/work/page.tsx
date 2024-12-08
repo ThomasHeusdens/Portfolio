@@ -42,7 +42,7 @@ export default function Work() {
         </div>
       </header>
 
-      <div className="min-h-screen flex flex-col my-28 px-8 relative">
+      <div className="min-h-screen flex flex-col mt-40 mb-8 px-8 relative">
         <h1 className="text-6xl font-bold text-center mb-12 text-white">My Work</h1>
         
         <div className="flex flex-wrap gap-6 justify-start">
